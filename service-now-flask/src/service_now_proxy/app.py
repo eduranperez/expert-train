@@ -19,17 +19,18 @@ def health():
 
 def needits():
     """Return all needits."""
+    data = request.form
+    text = data['text']
     s = pysnow.Client(
         instance=SN_INSTANCE_URL,
         user=SN_USERNAME,
         password=SN_PASSWORD) 
     needit = s.resource(api_path='/table/x_58872_needit_needit') 
-    response = needit.get(stream=True)
-    data = {'records': []}
-    for needit in response.all():
-        data['records'].append(needit)
-    print(data)
-    return jsonify(data['records']), 200
+    record = needit.get(query={'number':text})
+    if record:
+        return jsonify(record.one()), 200
+    else:
+        return jsonify({'message': 'Record not found'})
 
 def slack_action():
     """Log slack action."""
@@ -44,6 +45,6 @@ def create_app():
     """Initialize app."""
     app = Flask(__name__)
     app.add_url_rule('/health', view_func=health, methods=['GET'])
-    app.add_url_rule('/needits', view_func=needits, methods=['GET'])
+    app.add_url_rule('/needits', view_func=needits, methods=['GET', 'POST'])
     app.add_url_rule('/slack', view_func=slack_action, methods=['GET','POST'])
     return app
