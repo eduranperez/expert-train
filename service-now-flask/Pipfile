@@ -1,0 +1,15 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+e1839a8 = {editable = true,path = "."}
+service-now-proxy = {editable = true,path = "."}
+
+[packages]
+flask = "*"
+pysnow = "*"
+
+[requires]
+python_version = "3.7"
