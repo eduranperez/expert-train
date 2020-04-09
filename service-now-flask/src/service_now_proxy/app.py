@@ -31,9 +31,19 @@ def needits():
     print(data)
     return jsonify(data['records']), 200
 
+def slack_action():
+    """Log slack action."""
+    data = request.json
+    logging.info(data)
+    if data and 'challenge' in data:
+        return jsonify({'challenge': data['challenge']})
+    else:
+        return Response(status=200)
+
 def create_app():
     """Initialize app."""
     app = Flask(__name__)
     app.add_url_rule('/health', view_func=health, methods=['GET'])
     app.add_url_rule('/needits', view_func=needits, methods=['GET'])
+    app.add_url_rule('/slack', view_func=slack_action, methods=['GET','POST'])
     return app
