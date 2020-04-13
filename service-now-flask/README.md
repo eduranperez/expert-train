@@ -90,6 +90,12 @@ Slack Bot's Incident Endpoint Flow Diagram
 ```
 For more information about mermaid syntax please visit their page at https://mermaid-js.github.io/mermaid/#/n00b-syntaxReference
 
+To view your pages open any of the resulting html files inside of
+```
+expert-train/service-now-flask/docs/build/html
+```
+with the browser of your choice.
+
 ## Versioning
 
 We use [SemVer](http://semver.org/) for versioning.
