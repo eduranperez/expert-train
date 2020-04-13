@@ -29,7 +29,7 @@ expert-train/service-now-flask $ pipenv install -d
 
 To run the flask app, change directory to `expert-train/service-now-flask`
 
-Create .env file with the below config.
+Create a .env file with the below config.
 
 ```
 FLASK_ENV=development
@@ -67,7 +67,12 @@ To create a new page add a reference to it under "Contents" in index.rst.  For e
    endpoints
 ```
 
-Then create a new rst file with the same name.  Continuing the example.
+Then create a new rst file with the same name in the directory
+```
+expert-train/service-now-flask/docs/source
+```
+
+Continuing the example.
 
 ```
   endpoints.rst
