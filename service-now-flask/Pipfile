@@ -6,6 +6,8 @@ verify_ssl = true
 [dev-packages]
 e1839a8 = {editable = true,path = "."}
 service-now-proxy = {editable = true,path = "."}
+sphinx = "*"
+sphinxcontrib-mermaid = "*"
 
 [packages]
 flask = "*"

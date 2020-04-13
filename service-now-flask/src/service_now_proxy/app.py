@@ -1,7 +1,9 @@
 """flask app to communicate with service now."""
+import json
 import logging
 import os
 import pysnow
+import requests
 import sys
 from flask import Flask, request, Response, jsonify
 
@@ -24,7 +26,7 @@ def needits():
     s = pysnow.Client(
         instance=SN_INSTANCE_URL,
         user=SN_USERNAME,
-        password=SN_PASSWORD) 
+        password=SN_PASSWORD)
     needits = s.resource(api_path='/table/x_58872_needit_needit')
     needit = needits.get(query={'number': text}).one_or_none()
     msg = {
@@ -43,7 +45,7 @@ def needits():
                     "type": "button",
                     "text": {
                         "type": "plain_text",
-                        "text": "Reply to review",
+                        "text": "Create Ticket",
                         "emoji": False
                     }
                 }
@@ -64,10 +66,28 @@ def slack_action():
         return Response(status=200)
 
 
+def interact():
+    """Endpoint to handle user interactions."""
+    data = request.form
+    for k, v in data.items():
+        print(k)
+        print(type(v))
+    payload = json.loads(data['payload'])
+    r = requests.post(
+        payload['response_url'],
+        json={
+            "text": "Thanks for your request, we'll process it and get back to you."
+        }
+    )
+    print(r, r.status_code)
+    return Response(status=200)
+
+
 def create_app():
     """Initialize app."""
     app = Flask(__name__)
     app.add_url_rule('/health', view_func=health, methods=['GET'])
     app.add_url_rule('/needits', view_func=needits, methods=['POST'])
     app.add_url_rule('/slack', view_func=slack_action, methods=['POST'])
+    app.add_url_rule('/interact', view_func=interact, methods=['POST'])
     return app
