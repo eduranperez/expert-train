@@ -11,7 +11,10 @@ echo "Do fresh install to make sure everything is there"
 pipenv install
 
 cd $SITE_PACKAGES
+chmod -R 777 ./
 zip -r9 $DIR/package.zip *
 
 cd $DIR
-zip -g package.zip logger.py
+zip -g package.zip aggie_bot.py
+
+aws lambda update-function-code --function-name  logTest --zip-file fileb://package.zip
