@@ -6,8 +6,8 @@ import os
 
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
-HOST = "54.183.25.0"#os.getenv('LOGSTASH_HOST')
-PORT = 9200#os.getenv('LOGSTASH_PORT')
+HOST = os.getenv('LOGSTASH_HOST')
+PORT = int(os.getenv('LOGSTASH_PORT'))
 
 import socket
 
@@ -16,8 +16,7 @@ metadata = {}
 
 
 def lambda_handler(event, context):
-	print("LOGGGGSSS")
-	print(event)
+
 	# Check prerequisites
 	# Attach Logstash TCP Socket
 	s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -30,8 +29,6 @@ def lambda_handler(event, context):
 	metadata["aws"]["memory_limit_in_mb"] = context.memory_limit_in_mb
 	try:
 		logs = awslogs_handler(s, event)
-		print("logs are")
-		print(logs)
 		for log in logs:
 			send_entry(s, log)
 	except Exception as e:
