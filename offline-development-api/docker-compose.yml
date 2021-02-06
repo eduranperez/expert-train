@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  lambda:
+    build: .
+    environment:
+      - NODE_PATH=/var/task/src:/var/task/lib
+      - AWS_ACCESS_KEY_ID=7ucjkf
+      - AWS_SECRET_ACCESS_KEY=vvnio
+      - AWS_REGION=localhost
+      - USE_LOCAL_DYNAMODB=true 
+      - DOCKER_LAMBDA_STAY_OPEN=1
+    volumes:
+      - ./get-all/:/var/task/src/
+      - ./tmp/:/tmp/
+networks:
+  default:
+    external:
+      name: local-api-network

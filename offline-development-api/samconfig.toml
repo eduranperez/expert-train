@@ -1,0 +1,20 @@
+version = 0.1
+[default]
+[default.deploy]
+[default.deploy.parameters]
+stack_name = "items-app"
+s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-19mhyatc35jkf"
+s3_prefix = "items-app"
+region = "us-west-1"
+confirm_changeset = true
+capabilities = "CAPABILITY_IAM"
+
+[development]
+[development.deploy]
+[development.deploy.parameters]
+stack_name = "items-app"
+s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-19mhyatc35jkf"
+s3_prefix = "items-app"
+region = "us-west-1"
+confirm_changeset = true
+capabilities = "CAPABILITY_IAM"
