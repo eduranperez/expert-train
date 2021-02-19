@@ -7,10 +7,10 @@
   "author": "SAM CLI",
   "license": "MIT",
   "dependencies": {
+    "aws-sdk": "^2.839.0"
   },
   "scripts": {
     "test": "mocha tests/unit/"
   },
-  "devDependencies": {
-  }
+  "devDependencies": {}
 }

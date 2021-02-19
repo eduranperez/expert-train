@@ -32,7 +32,7 @@ exports.lambdaHandler = async (event, context) => {
 exports.getDynamoDbDocumentClient = () => {
     console.log("Connecting to DB....");
     console.log(process.env.USE_LOCAL_DYNAMODB);
-    if (process.env.USE_LOCAL_DYNAMODB === true) {
+    if (process.env.USE_LOCAL_DYNAMODB == "true") {
         console.log('connecting to local instance');
         return new dynamoDb.DocumentClient({'endpoint': 'http://dynamo-local:8000'});
     } else {

@@ -4,6 +4,18 @@ volumes:
   dynamodb_data:
 
 services:
+  get-item:
+    build: .
+    container_name: get-item
+    env_file:
+      - ./.env
+    ports:
+      - '9000:9001'
+    volumes:
+      - ./get-item/:/var/task/src/
+      - ./tmp/:/tmp/
+    networks:
+      - local-api-network
   get-all:
     build: .
     container_name: get-all
