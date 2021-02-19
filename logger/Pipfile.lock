@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "6da1596d359fcc418d55d7d514b6c979c8364a865bb801345b063f541172f595"
+            "sha256": "584d8b617a5e8b2def00d0dd3f7388497d726d30976eb3dd34994bd1de0f7156"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -58,6 +58,15 @@
             ],
             "index": "pypi",
             "version": "==3.3.1"
+        },
+        "python3-ldap": {
+            "hashes": [
+                "sha256:6507e870d5720a52d2ed6f70f88cfcfaf8e234c2c223b33c04237262ef16ec39",
+                "sha256:da4fb40461214835477afb2d31315e607508e6c17daf7de4af1348290a2b8731",
+                "sha256:f18a0e64f717a60f3bfb74b83a3298830efff0860d90d21619e158a90f9e9494"
+            ],
+            "index": "pypi",
+            "version": "==0.9.8.4"
         }
     },
     "develop": {}

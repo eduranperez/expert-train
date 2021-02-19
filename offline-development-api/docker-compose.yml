@@ -1,19 +1,38 @@
 version: '3'
 
+volumes:
+  dynamodb_data:
+
 services:
-  lambda:
+  get-all:
     build: .
-    environment:
-      - NODE_PATH=/var/task/src:/var/task/lib
-      - AWS_ACCESS_KEY_ID=7ucjkf
-      - AWS_SECRET_ACCESS_KEY=vvnio
-      - AWS_REGION=localhost
-      - USE_LOCAL_DYNAMODB=true 
-      - DOCKER_LAMBDA_STAY_OPEN=1
+    container_name: get-all
+    env_file:
+      - ./.env
     volumes:
       - ./get-all/:/var/task/src/
       - ./tmp/:/tmp/
+    networks:
+      - local-api-network
+  dynamo-local:
+    image: amazon/dynamodb-local:latest
+    container_name: dynamo-local
+    hostname: dynamo-local
+    env_file:
+      - ./.env
+    ports:
+      - '8000:8000'
+    networks:
+      - local-api-network
+    volumes:
+      - dynamodb_data:/home/dynamodblocal
+    command: -jar DynamoDBLocal.jar -sharedDb -dbPath /home/dynamodblocal
+  test:
+    image: amd64/ubuntu:latest
+    env_file:
+      - ./.env
+    networks:
+      - local-api-network
 networks:
-  default:
-    external:
-      name: local-api-network
+  local-api-network:
+    driver: bridge

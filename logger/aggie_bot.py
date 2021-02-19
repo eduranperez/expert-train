@@ -1,5 +1,5 @@
 import json
-import ldap
+from ldap3 import Server, Connection, SAFE_SYNC
 import re
 
 def log_event(event, context):
@@ -19,9 +19,9 @@ def log_event(event, context):
     elif ldap_regex.match(text):
         query = text[5:]
         print('Searching LDAP for ' + query)
-        l = ldap.initialize("ldap://ldap.ucdavis.edu")
-        l.simple_bind_s("","")
-        res = l.search_s("ou=People,dc=ucdavis,dc=edu", ldap.SCOPE_SUBTREE, "(|(uid={query})(mail={query})(givenName={query})(sn={query})(cn={query}))".format(query=query))
+        server = Server("ldap://ldap.ucdavis.edu")
+        conn = Connection(server, '', '', client_strategy=SAFE_SYNC, auto_bind=True)
+        status, result, res, _ = conn.search("ou=People,dc=ucdavis,dc=edu", "(|(uid={query})(mail={query})(givenName={query})(sn={query})(cn={query}))".format(query=query))
         print('Found {} ldap results'.format(len(res)))
         message_text = ''
         for user in res:

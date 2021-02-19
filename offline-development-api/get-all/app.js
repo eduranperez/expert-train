@@ -4,7 +4,7 @@ exports.lambdaHandler = async (event, context) => {
         const params = {
             TableName: 'items',
         };
-        console.log('hi world');
+        console.log('hi world 6');
         console.log(event);
         const docClient = exports.getDynamoDbDocumentClient();
         

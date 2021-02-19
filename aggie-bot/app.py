@@ -6,16 +6,18 @@ from flask import Flask
 from slack import WebClient
 from slackeventsapi import SlackEventAdapter
 
-SLACK_SIGNING_SECRET = os.environ['SLACK_SIGNING_SECRET']
-SLACK_BOT_TOKEN = os.environ['SLACK_BOT_TOKEN']
+#SLACK_SIGNING_SECRET = os.environ['SLACK_SIGNING_SECRET']
+#SLACK_BOT_TOKEN = os.environ['SLACK_BOT_TOKEN']
 SERVICE_HUB_URL = "https://servicehub.ucdavis.edu/servicehub?id=ucd_kb_article&sysparm_article={KB_ID}"
 
 # Initialize a Flask app to host the events adapter
 app = Flask(__name__)
-slack_events_adapter = SlackEventAdapter('c2b1bef81ff70be77d987f287c18160d', "/slack/events", app)
+slack_events_adapter = SlackEventAdapter('4d028d2ce6bfb123ee3d8a7235e97195', "/slack/events", app)
 
 # Initialize a Web API client
-slack_web_client = WebClient(token='xoxb-191385809328-1266587139413-je50jzTlFEyxIJ9DVLi6gbKT')
+#slack_web_client = WebClient(token='xoxb-191385809328-1266587139413-FcezN94rB4KneJBy26C0XitK')
+slack_web_client = WebClient(token='xoxb-1626266528401-1620533729268-u8KykumhCkZvWed1Ptov2kTh')
+""""https://7d9bcba92b74.ngrok.io/slack/events"""
 
 def post_kb_link(channel_id, text):
     kb_id = "KB" + re.sub("[^0-9]", "", text).zfill(7)
