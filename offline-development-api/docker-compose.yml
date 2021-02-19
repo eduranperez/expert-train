@@ -9,6 +9,8 @@ services:
     container_name: get-all
     env_file:
       - ./.env
+    ports:
+      - '9001:9001'
     volumes:
       - ./get-all/:/var/task/src/
       - ./tmp/:/tmp/
