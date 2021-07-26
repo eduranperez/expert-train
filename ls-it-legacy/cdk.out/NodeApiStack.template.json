@@ -34,10 +34,125 @@
         "aws:cdk:path": "NodeApiStack/ECSTaskExecutionRole/Resource"
       }
     },
+    "ECSTaskExecutionRoleDefaultPolicyC25F7D27": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": [
+                "logs:CreateLogStream",
+                "logs:PutLogEvents"
+              ],
+              "Effect": "Allow",
+              "Resource": {
+                "Fn::GetAtt": [
+                  "nodeapiLogGroupD6C327A7",
+                  "Arn"
+                ]
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "PolicyName": "ECSTaskExecutionRoleDefaultPolicyC25F7D27",
+        "Roles": [
+          {
+            "Ref": "ECSTaskExecutionRole911F5A4F"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "NodeApiStack/ECSTaskExecutionRole/DefaultPolicy/Resource"
+      }
+    },
+    "nodeapiTaskRole88B8F892": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "ecs-tasks.amazonaws.com"
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "NodeApiStack/node-api/TaskRole/Resource"
+      }
+    },
+    "nodeapiFA1B8700": {
+      "Type": "AWS::ECS::TaskDefinition",
+      "Properties": {
+        "ContainerDefinitions": [
+          {
+            "Cpu": 256,
+            "Essential": true,
+            "Image": "094700089952.dkr.ecr.us-west-2.amazonaws.com/node-api:v1",
+            "LogConfiguration": {
+              "LogDriver": "awslogs",
+              "Options": {
+                "awslogs-group": {
+                  "Ref": "nodeapiLogGroupD6C327A7"
+                },
+                "awslogs-stream-prefix": "node-api",
+                "awslogs-region": {
+                  "Ref": "AWS::Region"
+                }
+              }
+            },
+            "Memory": 512,
+            "Name": "node-api",
+            "PortMappings": [
+              {
+                "ContainerPort": 3000,
+                "HostPort": 3000,
+                "Protocol": "tcp"
+              }
+            ]
+          }
+        ],
+        "Cpu": "256",
+        "ExecutionRoleArn": {
+          "Fn::GetAtt": [
+            "ECSTaskExecutionRole911F5A4F",
+            "Arn"
+          ]
+        },
+        "Family": "node-api",
+        "Memory": "512",
+        "NetworkMode": "awsvpc",
+        "RequiresCompatibilities": [
+          "FARGATE"
+        ],
+        "TaskRoleArn": {
+          "Fn::GetAtt": [
+            "nodeapiTaskRole88B8F892",
+            "Arn"
+          ]
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "NodeApiStack/node-api/Resource"
+      }
+    },
+    "nodeapiLogGroupD6C327A7": {
+      "Type": "AWS::Logs::LogGroup",
+      "UpdateReplacePolicy": "Retain",
+      "DeletionPolicy": "Retain",
+      "Metadata": {
+        "aws:cdk:path": "NodeApiStack/node-api/node-api/LogGroup/Resource"
+      }
+    },
     "CDKMetadata": {
       "Type": "AWS::CDK::Metadata",
       "Properties": {
-        "Analytics": "v2:deflate64:H4sIAAAAAAAAEyWLQQqDMBAA3+I9rg3SQ2+CHyjpC8Ka0tW6C8kGkZC/t2lPMzCMBWuvcOkmf6Qel20oKDFAeajHzczCSWNGNfOTXUiSI4bm37CQknA1bSS/Q3Hy/rXGWs391JfwMMINbLcmoj5mVtoDuD8/pd3wX3sAAAA="
+        "Analytics": "v2:deflate64:H4sIAAAAAAAAE12MwQ6CMBBEv4V7KRLjwZsJRi8eCPoDTam4Arum3caQpv8uhRgTT/N2ZmdKWZY7uckO6u1y3fZF0GSNDFdWuhcVoWPrNYvqjo1x5K02ieegBQbCKFIxgBplaGhYwkVrGkBP6VwpCqOdDCdlO8Xmplx/NHfAZSR9/TuErACN/XlRDNTNExfqzpb8K7W+HGMU9cQPwmIr97LMng4gtx4ZRiObVT8T5nRu7AAAAA=="
       },
       "Metadata": {
         "aws:cdk:path": "NodeApiStack/CDKMetadata/Default"

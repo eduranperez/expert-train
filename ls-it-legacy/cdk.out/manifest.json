@@ -20,14 +20,119 @@
             "type": "aws:cdk:logicalId",
             "data": "ECSTaskExecutionRole911F5A4F",
             "trace": [
-              "new Role (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/jsii-kernel-sSeyQV/node_modules/@aws-cdk/aws-iam/lib/role.js:72:22)",
-              "/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmp1vnk5b5s/lib/program.js:8154:58",
-              "Kernel._wrapSandboxCode (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmp1vnk5b5s/lib/program.js:8582:24)",
-              "Kernel._create (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmp1vnk5b5s/lib/program.js:8154:34)",
-              "Kernel.create (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmp1vnk5b5s/lib/program.js:7895:29)",
-              "KernelHost.processRequest (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmp1vnk5b5s/lib/program.js:9479:36)",
-              "KernelHost.run (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmp1vnk5b5s/lib/program.js:9442:22)",
-              "Immediate._onImmediate (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmp1vnk5b5s/lib/program.js:9443:46)",
+              "new Role (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/jsii-kernel-irsdtE/node_modules/@aws-cdk/aws-iam/lib/role.js:72:22)",
+              "/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmpromnm9_n/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmpromnm9_n/lib/program.js:8582:24)",
+              "Kernel._create (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmpromnm9_n/lib/program.js:8154:34)",
+              "Kernel.create (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmpromnm9_n/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmpromnm9_n/lib/program.js:9479:36)",
+              "KernelHost.run (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmpromnm9_n/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmpromnm9_n/lib/program.js:9443:46)",
+              "processImmediate (internal/timers.js:462:21)"
+            ]
+          }
+        ],
+        "/NodeApiStack/ECSTaskExecutionRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ECSTaskExecutionRoleDefaultPolicyC25F7D27",
+            "trace": [
+              "new Policy (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/jsii-kernel-irsdtE/node_modules/@aws-cdk/aws-iam/lib/policy.js:56:26)",
+              "Role.addToPrincipalPolicy (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/jsii-kernel-irsdtE/node_modules/@aws-cdk/aws-iam/lib/role.js:209:34)",
+              "Function.addToPrincipal (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/jsii-kernel-irsdtE/node_modules/@aws-cdk/aws-iam/lib/grant.js:90:65)",
+              "LogGroup.grant (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/jsii-kernel-irsdtE/node_modules/@aws-cdk/aws-logs/lib/log-group.js:96:26)",
+              "LogGroup.grantWrite (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/jsii-kernel-irsdtE/node_modules/@aws-cdk/aws-logs/lib/log-group.js:88:21)",
+              "AwsLogDriver.bind (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/jsii-kernel-irsdtE/node_modules/@aws-cdk/aws-ecs/lib/log-drivers/aws-log-driver.js:48:23)",
+              "new ContainerDefinition (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/jsii-kernel-irsdtE/node_modules/@aws-cdk/aws-ecs/lib/container-definition.js:114:50)",
+              "FargateTaskDefinition.addContainer (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/jsii-kernel-irsdtE/node_modules/@aws-cdk/aws-ecs/lib/base/task-definition.js:261:16)",
+              "/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmpromnm9_n/lib/program.js:7970:134",
+              "Kernel._wrapSandboxCode (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmpromnm9_n/lib/program.js:8582:24)",
+              "/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmpromnm9_n/lib/program.js:7970:107",
+              "Kernel._ensureSync (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmpromnm9_n/lib/program.js:8563:28)",
+              "Kernel.invoke (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmpromnm9_n/lib/program.js:7970:34)",
+              "KernelHost.processRequest (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmpromnm9_n/lib/program.js:9479:36)",
+              "KernelHost.run (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmpromnm9_n/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmpromnm9_n/lib/program.js:9443:46)",
+              "processImmediate (internal/timers.js:462:21)"
+            ]
+          }
+        ],
+        "/NodeApiStack/node-api/TaskRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "nodeapiTaskRole88B8F892",
+            "trace": [
+              "new Role (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/jsii-kernel-irsdtE/node_modules/@aws-cdk/aws-iam/lib/role.js:72:22)",
+              "new TaskDefinition (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/jsii-kernel-irsdtE/node_modules/@aws-cdk/aws-ecs/lib/base/task-definition.js:97:43)",
+              "new FargateTaskDefinition (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/jsii-kernel-irsdtE/node_modules/@aws-cdk/aws-ecs/lib/fargate/fargate-task-definition.js:25:9)",
+              "/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmpromnm9_n/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmpromnm9_n/lib/program.js:8582:24)",
+              "Kernel._create (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmpromnm9_n/lib/program.js:8154:34)",
+              "Kernel.create (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmpromnm9_n/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmpromnm9_n/lib/program.js:9479:36)",
+              "KernelHost.run (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmpromnm9_n/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmpromnm9_n/lib/program.js:9443:46)",
+              "processImmediate (internal/timers.js:462:21)"
+            ]
+          }
+        ],
+        "/NodeApiStack/node-api/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "nodeapiFA1B8700",
+            "trace": [
+              "new TaskDefinition (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/jsii-kernel-irsdtE/node_modules/@aws-cdk/aws-ecs/lib/base/task-definition.js:103:25)",
+              "new FargateTaskDefinition (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/jsii-kernel-irsdtE/node_modules/@aws-cdk/aws-ecs/lib/fargate/fargate-task-definition.js:25:9)",
+              "/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmpromnm9_n/lib/program.js:8154:58",
+              "Kernel._wrapSandboxCode (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmpromnm9_n/lib/program.js:8582:24)",
+              "Kernel._create (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmpromnm9_n/lib/program.js:8154:34)",
+              "Kernel.create (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmpromnm9_n/lib/program.js:7895:29)",
+              "KernelHost.processRequest (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmpromnm9_n/lib/program.js:9479:36)",
+              "KernelHost.run (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmpromnm9_n/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmpromnm9_n/lib/program.js:9443:46)",
+              "processImmediate (internal/timers.js:462:21)"
+            ]
+          }
+        ],
+        "/NodeApiStack/node-api/node-api": [
+          {
+            "type": "aws:cdk:warning",
+            "data": "Proper policies need to be attached before pulling from ECR repository, or use 'fromEcrRepository'.",
+            "trace": [
+              "Annotations.addMessage (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/jsii-kernel-irsdtE/node_modules/@aws-cdk/core/lib/annotations.js:94:42)",
+              "Annotations.addWarning (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/jsii-kernel-irsdtE/node_modules/@aws-cdk/core/lib/annotations.js:37:14)",
+              "RepositoryImage.bind (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/jsii-kernel-irsdtE/node_modules/@aws-cdk/aws-ecs/lib/images/repository.js:40:42)",
+              "new ContainerDefinition (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/jsii-kernel-irsdtE/node_modules/@aws-cdk/aws-ecs/lib/container-definition.js:112:40)",
+              "FargateTaskDefinition.addContainer (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/jsii-kernel-irsdtE/node_modules/@aws-cdk/aws-ecs/lib/base/task-definition.js:261:16)",
+              "/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmpromnm9_n/lib/program.js:7970:134",
+              "Kernel._wrapSandboxCode (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmpromnm9_n/lib/program.js:8582:24)",
+              "/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmpromnm9_n/lib/program.js:7970:107",
+              "Kernel._ensureSync (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmpromnm9_n/lib/program.js:8563:28)",
+              "Kernel.invoke (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmpromnm9_n/lib/program.js:7970:34)",
+              "KernelHost.processRequest (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmpromnm9_n/lib/program.js:9479:36)",
+              "KernelHost.run (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmpromnm9_n/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmpromnm9_n/lib/program.js:9443:46)",
+              "processImmediate (internal/timers.js:462:21)"
+            ]
+          }
+        ],
+        "/NodeApiStack/node-api/node-api/LogGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "nodeapiLogGroupD6C327A7",
+            "trace": [
+              "new LogGroup (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/jsii-kernel-irsdtE/node_modules/@aws-cdk/aws-logs/lib/log-group.js:165:26)",
+              "AwsLogDriver.bind (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/jsii-kernel-irsdtE/node_modules/@aws-cdk/aws-ecs/lib/log-drivers/aws-log-driver.js:45:48)",
+              "new ContainerDefinition (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/jsii-kernel-irsdtE/node_modules/@aws-cdk/aws-ecs/lib/container-definition.js:114:50)",
+              "FargateTaskDefinition.addContainer (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/jsii-kernel-irsdtE/node_modules/@aws-cdk/aws-ecs/lib/base/task-definition.js:261:16)",
+              "/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmpromnm9_n/lib/program.js:7970:134",
+              "Kernel._wrapSandboxCode (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmpromnm9_n/lib/program.js:8582:24)",
+              "/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmpromnm9_n/lib/program.js:7970:107",
+              "Kernel._ensureSync (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmpromnm9_n/lib/program.js:8563:28)",
+              "Kernel.invoke (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmpromnm9_n/lib/program.js:7970:34)",
+              "KernelHost.processRequest (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmpromnm9_n/lib/program.js:9479:36)",
+              "KernelHost.run (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmpromnm9_n/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmpromnm9_n/lib/program.js:9443:46)",
               "processImmediate (internal/timers.js:462:21)"
             ]
           }
@@ -37,21 +142,21 @@
             "type": "aws:cdk:logicalId",
             "data": "CDKMetadata",
             "trace": [
-              "new MetadataResource (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/jsii-kernel-sSeyQV/node_modules/@aws-cdk/core/lib/private/metadata-resource.js:22:30)",
-              "/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/jsii-kernel-sSeyQV/node_modules/@aws-cdk/core/lib/private/synthesis.js:139:9",
-              "visit (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/jsii-kernel-sSeyQV/node_modules/@aws-cdk/core/lib/private/synthesis.js:200:9)",
-              "visit (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/jsii-kernel-sSeyQV/node_modules/@aws-cdk/core/lib/private/synthesis.js:197:9)",
-              "injectMetadataResources (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/jsii-kernel-sSeyQV/node_modules/@aws-cdk/core/lib/private/synthesis.js:128:5)",
-              "Object.synthesize (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/jsii-kernel-sSeyQV/node_modules/@aws-cdk/core/lib/private/synthesis.js:17:5)",
-              "App.synth (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/jsii-kernel-sSeyQV/node_modules/@aws-cdk/core/lib/stage.js:100:41)",
-              "/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmp1vnk5b5s/lib/program.js:7970:134",
-              "Kernel._wrapSandboxCode (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmp1vnk5b5s/lib/program.js:8582:24)",
-              "/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmp1vnk5b5s/lib/program.js:7970:107",
-              "Kernel._ensureSync (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmp1vnk5b5s/lib/program.js:8563:28)",
-              "Kernel.invoke (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmp1vnk5b5s/lib/program.js:7970:34)",
-              "KernelHost.processRequest (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmp1vnk5b5s/lib/program.js:9479:36)",
-              "KernelHost.run (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmp1vnk5b5s/lib/program.js:9442:22)",
-              "Immediate._onImmediate (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmp1vnk5b5s/lib/program.js:9443:46)",
+              "new MetadataResource (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/jsii-kernel-irsdtE/node_modules/@aws-cdk/core/lib/private/metadata-resource.js:22:30)",
+              "/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/jsii-kernel-irsdtE/node_modules/@aws-cdk/core/lib/private/synthesis.js:139:9",
+              "visit (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/jsii-kernel-irsdtE/node_modules/@aws-cdk/core/lib/private/synthesis.js:200:9)",
+              "visit (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/jsii-kernel-irsdtE/node_modules/@aws-cdk/core/lib/private/synthesis.js:197:9)",
+              "injectMetadataResources (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/jsii-kernel-irsdtE/node_modules/@aws-cdk/core/lib/private/synthesis.js:128:5)",
+              "Object.synthesize (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/jsii-kernel-irsdtE/node_modules/@aws-cdk/core/lib/private/synthesis.js:17:5)",
+              "App.synth (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/jsii-kernel-irsdtE/node_modules/@aws-cdk/core/lib/stage.js:100:41)",
+              "/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmpromnm9_n/lib/program.js:7970:134",
+              "Kernel._wrapSandboxCode (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmpromnm9_n/lib/program.js:8582:24)",
+              "/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmpromnm9_n/lib/program.js:7970:107",
+              "Kernel._ensureSync (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmpromnm9_n/lib/program.js:8563:28)",
+              "Kernel.invoke (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmpromnm9_n/lib/program.js:7970:34)",
+              "KernelHost.processRequest (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmpromnm9_n/lib/program.js:9479:36)",
+              "KernelHost.run (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmpromnm9_n/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmpromnm9_n/lib/program.js:9443:46)",
               "processImmediate (internal/timers.js:462:21)"
             ]
           }
@@ -61,21 +166,21 @@
             "type": "aws:cdk:logicalId",
             "data": "CDKMetadataAvailable",
             "trace": [
-              "new MetadataResource (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/jsii-kernel-sSeyQV/node_modules/@aws-cdk/core/lib/private/metadata-resource.js:30:35)",
-              "/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/jsii-kernel-sSeyQV/node_modules/@aws-cdk/core/lib/private/synthesis.js:139:9",
-              "visit (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/jsii-kernel-sSeyQV/node_modules/@aws-cdk/core/lib/private/synthesis.js:200:9)",
-              "visit (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/jsii-kernel-sSeyQV/node_modules/@aws-cdk/core/lib/private/synthesis.js:197:9)",
-              "injectMetadataResources (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/jsii-kernel-sSeyQV/node_modules/@aws-cdk/core/lib/private/synthesis.js:128:5)",
-              "Object.synthesize (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/jsii-kernel-sSeyQV/node_modules/@aws-cdk/core/lib/private/synthesis.js:17:5)",
-              "App.synth (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/jsii-kernel-sSeyQV/node_modules/@aws-cdk/core/lib/stage.js:100:41)",
-              "/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmp1vnk5b5s/lib/program.js:7970:134",
-              "Kernel._wrapSandboxCode (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmp1vnk5b5s/lib/program.js:8582:24)",
-              "/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmp1vnk5b5s/lib/program.js:7970:107",
-              "Kernel._ensureSync (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmp1vnk5b5s/lib/program.js:8563:28)",
-              "Kernel.invoke (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmp1vnk5b5s/lib/program.js:7970:34)",
-              "KernelHost.processRequest (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmp1vnk5b5s/lib/program.js:9479:36)",
-              "KernelHost.run (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmp1vnk5b5s/lib/program.js:9442:22)",
-              "Immediate._onImmediate (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmp1vnk5b5s/lib/program.js:9443:46)",
+              "new MetadataResource (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/jsii-kernel-irsdtE/node_modules/@aws-cdk/core/lib/private/metadata-resource.js:30:35)",
+              "/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/jsii-kernel-irsdtE/node_modules/@aws-cdk/core/lib/private/synthesis.js:139:9",
+              "visit (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/jsii-kernel-irsdtE/node_modules/@aws-cdk/core/lib/private/synthesis.js:200:9)",
+              "visit (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/jsii-kernel-irsdtE/node_modules/@aws-cdk/core/lib/private/synthesis.js:197:9)",
+              "injectMetadataResources (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/jsii-kernel-irsdtE/node_modules/@aws-cdk/core/lib/private/synthesis.js:128:5)",
+              "Object.synthesize (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/jsii-kernel-irsdtE/node_modules/@aws-cdk/core/lib/private/synthesis.js:17:5)",
+              "App.synth (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/jsii-kernel-irsdtE/node_modules/@aws-cdk/core/lib/stage.js:100:41)",
+              "/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmpromnm9_n/lib/program.js:7970:134",
+              "Kernel._wrapSandboxCode (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmpromnm9_n/lib/program.js:8582:24)",
+              "/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmpromnm9_n/lib/program.js:7970:107",
+              "Kernel._ensureSync (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmpromnm9_n/lib/program.js:8563:28)",
+              "Kernel.invoke (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmpromnm9_n/lib/program.js:7970:34)",
+              "KernelHost.processRequest (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmpromnm9_n/lib/program.js:9479:36)",
+              "KernelHost.run (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmpromnm9_n/lib/program.js:9442:22)",
+              "Immediate._onImmediate (/private/var/folders/ms/89n6w3w15z3514jlt45d28xr0000gr/T/tmpromnm9_n/lib/program.js:9443:46)",
               "processImmediate (internal/timers.js:462:21)"
             ]
           }

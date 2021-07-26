@@ -6,6 +6,8 @@ name = "pypi"
 [packages]
 "aws-cdk.core" = "*"
 "aws-cdk.aws-iam" = "*"
+"aws-cdk.aws-ecs" = "*"
+"aws-cdk.aws-ecr" = "*"
 
 [dev-packages]
 

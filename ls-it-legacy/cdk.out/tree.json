@@ -58,10 +58,194 @@
                   "fqn": "@aws-cdk/aws-iam.CfnRole",
                   "version": "1.115.0"
                 }
+              },
+              "DefaultPolicy": {
+                "id": "DefaultPolicy",
+                "path": "NodeApiStack/ECSTaskExecutionRole/DefaultPolicy",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "NodeApiStack/ECSTaskExecutionRole/DefaultPolicy/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                      "aws:cdk:cloudformation:props": {
+                        "policyDocument": {
+                          "Statement": [
+                            {
+                              "Action": [
+                                "logs:CreateLogStream",
+                                "logs:PutLogEvents"
+                              ],
+                              "Effect": "Allow",
+                              "Resource": {
+                                "Fn::GetAtt": [
+                                  "nodeapiLogGroupD6C327A7",
+                                  "Arn"
+                                ]
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        },
+                        "policyName": "ECSTaskExecutionRoleDefaultPolicyC25F7D27",
+                        "roles": [
+                          {
+                            "Ref": "ECSTaskExecutionRole911F5A4F"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-iam.CfnPolicy",
+                      "version": "1.115.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-iam.Policy",
+                  "version": "1.115.0"
+                }
               }
             },
             "constructInfo": {
               "fqn": "@aws-cdk/aws-iam.Role",
+              "version": "1.115.0"
+            }
+          },
+          "node-api": {
+            "id": "node-api",
+            "path": "NodeApiStack/node-api",
+            "children": {
+              "TaskRole": {
+                "id": "TaskRole",
+                "path": "NodeApiStack/node-api/TaskRole",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "NodeApiStack/node-api/TaskRole/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                      "aws:cdk:cloudformation:props": {
+                        "assumeRolePolicyDocument": {
+                          "Statement": [
+                            {
+                              "Action": "sts:AssumeRole",
+                              "Effect": "Allow",
+                              "Principal": {
+                                "Service": "ecs-tasks.amazonaws.com"
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-iam.CfnRole",
+                      "version": "1.115.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-iam.Role",
+                  "version": "1.115.0"
+                }
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "NodeApiStack/node-api/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::ECS::TaskDefinition",
+                  "aws:cdk:cloudformation:props": {
+                    "containerDefinitions": [
+                      {
+                        "cpu": 256,
+                        "essential": true,
+                        "image": "094700089952.dkr.ecr.us-west-2.amazonaws.com/node-api:v1",
+                        "memory": 512,
+                        "name": "node-api",
+                        "portMappings": [
+                          {
+                            "containerPort": 3000,
+                            "hostPort": 3000,
+                            "protocol": "tcp"
+                          }
+                        ],
+                        "logConfiguration": {
+                          "logDriver": "awslogs",
+                          "options": {
+                            "awslogs-group": {
+                              "Ref": "nodeapiLogGroupD6C327A7"
+                            },
+                            "awslogs-stream-prefix": "node-api",
+                            "awslogs-region": {
+                              "Ref": "AWS::Region"
+                            }
+                          }
+                        }
+                      }
+                    ],
+                    "cpu": "256",
+                    "executionRoleArn": {
+                      "Fn::GetAtt": [
+                        "ECSTaskExecutionRole911F5A4F",
+                        "Arn"
+                      ]
+                    },
+                    "family": "node-api",
+                    "memory": "512",
+                    "networkMode": "awsvpc",
+                    "requiresCompatibilities": [
+                      "FARGATE"
+                    ],
+                    "taskRoleArn": {
+                      "Fn::GetAtt": [
+                        "nodeapiTaskRole88B8F892",
+                        "Arn"
+                      ]
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-ecs.CfnTaskDefinition",
+                  "version": "1.115.0"
+                }
+              },
+              "node-api": {
+                "id": "node-api",
+                "path": "NodeApiStack/node-api/node-api",
+                "children": {
+                  "LogGroup": {
+                    "id": "LogGroup",
+                    "path": "NodeApiStack/node-api/node-api/LogGroup",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "NodeApiStack/node-api/node-api/LogGroup/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::Logs::LogGroup",
+                          "aws:cdk:cloudformation:props": {}
+                        },
+                        "constructInfo": {
+                          "fqn": "@aws-cdk/aws-logs.CfnLogGroup",
+                          "version": "1.115.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-logs.LogGroup",
+                      "version": "1.115.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-ecs.ContainerDefinition",
+                  "version": "1.115.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "@aws-cdk/aws-ecs.FargateTaskDefinition",
               "version": "1.115.0"
             }
           },
